@@ -46,7 +46,7 @@ function ListaTareas() {
   const handleCrearTarea = (e) => {
     e.preventDefault();
     if (nombreTarea.trim().length < 3) {
-      alert('El nombre de la tarea debe tener al menos 3 caracteres.');
+      alert('El nombre de la tarea debe tener al menos 3 caracteress.');
       return;
     }
     crearTarea(nombreTarea, descripcionTarea);
