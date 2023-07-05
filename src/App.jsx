@@ -1,4 +1,35 @@
 import React, { useState } from 'react';
+import React from 'react';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Tareas from './components/Tareas';
+import SobreNosotros from './components/SobreNosotros';
+import Menu from './components/Menu';
+
+const App = () => {
+  return (
+    <ChakraProvider>
+      <CSSReset />
+      <Router>
+        <div>
+          <Menu />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/tareas" component={Tareas} />
+            <Route path="/sobre-nosotros" component={SobreNosotros} />
+          </Switch>
+        </div>
+      </Router>
+    </ChakraProvider>
+  );
+};
+
+
+
+
+
+
 
 // Hook personalizado para gestionar la lista de tareas
 function useListaTareas() {
